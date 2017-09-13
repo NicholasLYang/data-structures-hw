@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+     \PYG{k+kd}{public} \PYG{n}{Rectangle} \PYG{n+nf}{DestRotate}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+        \PYG{k+kt}{double} \PYG{n}{temp}\PYG{o}{;}
+        \PYG{n}{temp} \PYG{o}{=} \PYG{n}{xSpan}\PYG{o}{;}
+        \PYG{n}{xSpan} \PYG{o}{=} \PYG{n}{ySpan}\PYG{o}{;}
+        \PYG{n}{ySpan} \PYG{o}{=} \PYG{n}{temp}\PYG{o}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{;}
+    \PYG{o}{\PYGZcb{}}
+
+    \PYG{k+kd}{public} \PYG{n}{Rectangle} \PYG{n+nf}{NonDestRotate}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+        \PYG{n}{Rectangle} \PYG{n}{r} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Rectangle}\PYG{o}{(}\PYG{n}{xSpan}\PYG{o}{,} \PYG{n}{ySpan}\PYG{o}{);}
+        \PYG{n}{r}\PYG{o}{.}\PYG{n+na}{DestRotate}\PYG{o}{();}
+        \PYG{k}{return} \PYG{n}{r}\PYG{o}{;}
+    \PYG{o}{\PYGZcb{}}
+\end{Verbatim}

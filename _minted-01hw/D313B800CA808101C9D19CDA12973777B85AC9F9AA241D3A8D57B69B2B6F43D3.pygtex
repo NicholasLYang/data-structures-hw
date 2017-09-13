@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{// Ideally would do in intermediary class, maybe a Priest class}
+    \PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{marry}\PYG{o}{(}\PYG{n}{Person} \PYG{n}{potentialPartner}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+        \PYG{c+c1}{// Check if related}
+        \PYG{k+kt}{boolean} \PYG{n}{isRelated} \PYG{o}{=} \PYG{n}{potentialPartner}\PYG{o}{.}\PYG{n+na}{getParent2}\PYG{o}{()} \PYG{o}{==} \PYG{k}{this} \PYG{o}{||}
+                \PYG{n}{potentialPartner}\PYG{o}{.}\PYG{n+na}{getParent1}\PYG{o}{()} \PYG{o}{==} \PYG{k}{this} \PYG{o}{||}
+                \PYG{k}{this}\PYG{o}{.}\PYG{n+na}{parent1} \PYG{o}{==} \PYG{n}{potentialPartner} \PYG{o}{||}
+                \PYG{k}{this}\PYG{o}{.}\PYG{n+na}{parent2} \PYG{o}{==} \PYG{n}{potentialPartner}\PYG{o}{;}
+
+        \PYG{k}{if} \PYG{o}{(}\PYG{n}{potentialPartner} \PYG{o}{==} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}You can\PYGZsq{}t marry imaginary people, \PYGZdq{}} \PYG{o}{+} \PYG{n}{name}\PYG{o}{);}
+            \PYG{k}{return}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{o}{(}\PYG{n}{potentialPartner} \PYG{o}{==} \PYG{k}{this}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}You can\PYGZsq{}t marry yourself\PYGZdq{}}\PYG{o}{);}
+            \PYG{k}{return}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{o}{(}\PYG{n}{potentialPartner}\PYG{o}{.}\PYG{n+na}{getSpouse}\PYG{o}{()} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Uh oh, they\PYGZsq{}re already married!\PYGZdq{}}\PYG{o}{);}
+            \PYG{k}{return}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{o}{(}\PYG{k}{this}\PYG{o}{.}\PYG{n+na}{spouse} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Uh oh, you\PYGZsq{}re already married!\PYGZdq{}}\PYG{o}{);}
+            \PYG{k}{return}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{o}{(}\PYG{n}{isRelated}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Ewww\PYGZdq{}}\PYG{o}{);}
+            \PYG{k}{return}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{n}{potentialPartner}\PYG{o}{.}\PYG{n+na}{setSpouse}\PYG{o}{(}\PYG{k}{this}\PYG{o}{);}
+        \PYG{n}{setSpouse}\PYG{o}{(}\PYG{n}{potentialPartner}\PYG{o}{);}
+    \PYG{o}{\PYGZcb{}}
+\end{Verbatim}

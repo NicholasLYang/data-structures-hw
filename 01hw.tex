@@ -1,0 +1,209 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{minted}
+\usepackage{enumitem}
+\title{Data Structures Problem Set \#1}
+\author{Nicholas Yang}
+\date{18 September 2017}
+\begin{document}
+\maketitle
+\section{Exercise 1}
+\begin{enumerate}[label=(\alph*)]
+\item Rectangle rotate methods:
+  \begin{minted}{Java}
+     public Rectangle DestRotate() {
+        double temp;
+        temp = xSpan;
+        xSpan = ySpan;
+        ySpan = temp;
+        return this;
+    }
+
+    public Rectangle NonDestRotate() {
+        Rectangle newRect = new Rectangle(xSpan, ySpan);
+        newRect.DestRotate();
+        return newRect;
+    }
+  \end{minted}
+  LocatedRect rotate methods:
+  \begin{minted}{Java}
+    public LocatedRect DestRotate() {
+        // First change the lengths of the sides:
+        super.DestRotate();
+        // Then shift it over by ySpan
+        this.translateDest(super.getYSpan(), 0);
+        return this;
+    }
+
+    public LocatedRect NonDestRotate() {
+        LocatedRect newLocatedRect = new LocatedRect(
+          xL,
+          xL + xSpan,
+          yL,
+          yL + ySpan
+        );
+        return newLocatedRect.DestRotate();
+    }
+  \end{minted}
+
+\item TestRotate driver program:
+  \begin{minted}{Java}
+    public class TestRotate {
+        public static void main(String[] args) {
+            LocatedRect lr = new LocatedRect(2, 10, 4, 7);
+            System.out.println("Original Located Rectangle:");
+            System.out.println(lr);
+            System.out.println("Non destructive rotate");
+            System.out.println(lr.NonDestRotate());
+            // Note how the object state isn't changed
+            System.out.println(lr);
+            System.out.println("Destructive rotate:");
+            System.out.println(lr.DestRotate());
+            // Now the state has been mutated
+            System.out.println(lr);
+            Rectangle r = new Rectangle(4, 7);
+            System.out.println("Original Rectangle:");
+            System.out.println(r);
+            System.out.println("Non destructive rotate");
+            System.out.println(r.NonDestRotate());
+            // Again, not mutated here
+            System.out.println(r);
+            System.out.println("Destructive rotate:");
+            System.out.println(r.DestRotate());
+            // But mutated here
+            System.out.println(r);
+        }
+    }
+  \end{minted}
+\end{enumerate}
+\section{Exercise 2}
+\begin{enumerate}[label=(\alph*)]
+\item Square class:
+  \begin{minted}{Java}
+   public class Square extends Rectangle {
+       public Square(double side) {
+           super(side, side);
+       }
+       // Doesn't matter what side
+       public double getSide() {
+           return super.getYSpan();
+       }
+       public void setSide(double side) {
+           super.setSpans(side, side);
+       }
+       public void setSpans(double x, double y) {
+           System.out.println(
+               "You may not use setSpans to set the sides of a square!"
+           );
+       }
+   }
+  \end{minted}
+\item LocatedSquare class:
+  \begin{minted}{Java}
+    public class LocatedSquare extends Square {
+        // Coords of lower left corner
+        private double x, y;
+        public LocatedSquare(double side, double x, double y) {
+            super(side);
+            setCorner(x, y);
+        }
+        public void setCorner(double newX, double newY) {
+            x = newX;
+            y = newY;
+        }
+        // Returns rightmost x value (x2)
+        public double right() {
+            return x + super.getSide();
+        }
+        // Returns leftmost x value (x1)
+        public double left() {
+            return x;
+        }
+        // Returns highest y value (y2)
+        public double top() {
+            return y + super.getSide();
+        }
+        // Returns lowest y value (y1)
+        public double bottom() {
+            return y;
+        }
+        public String toString() {
+            return "LS[ x = " + x + " y = " + y + " side = " + getSide() + "]";
+        }
+    }
+    \end{minted}
+  \item Can you do part (b) by having LocatedSquare extend both
+Square and LocatedRectangle? \\
+Not with traditional inheritance. You could define Square and LocatedRectangle
+as interfaces, then simply have LocatedSquare implement both. However, it's
+probably best to just utilize object composition with a Point class for the
+location and a Square class for the actual object.
+\end{enumerate}
+\section{Exercise 3}
+Write the following code:
+\begin{enumerate}[label=(\alph*)]
+\item A data field spouse, of class Person:
+  \begin{minted}{Java}
+    private Person spouse;
+  \end{minted}
+\item A getter {\tt getSpouse()}
+  \begin{minted}{Java}
+   public Person getSpouse() {
+       return spouse;
+   }
+  \end{minted}
+\item A method {\tt marry(Person q)}
+  \begin{minted}{Java}
+    // Ideally would do in intermediary class, maybe a Priest class
+    public void marry(Person potentialPartner) {
+        // Check if related
+        boolean isRelated = potentialPartner.getParent2() == this ||
+                potentialPartner.getParent1() == this ||
+                this.parent1 == potentialPartner ||
+                this.parent2 == potentialPartner;
+
+        if (potentialPartner == null) {
+            System.out.println("You can't marry imaginary people, " + name);
+            return;
+        }
+        if (potentialPartner == this) {
+            System.out.println("You can't marry yourself");
+            return;
+        }
+        if (potentialPartner.getSpouse() != null) {
+            System.out.println("Uh oh, they're already married!");
+            return;
+        }
+        if (this.spouse != null) {
+            System.out.println("Uh oh, you're already married!");
+            return;
+        }
+        if (isRelated) {
+            System.out.println("Ewww");
+            return;
+        }
+        potentialPartner.setSpouse(this);
+        setSpouse(potentialPartner);
+    }
+  \end{minted}
+\item A method {\tt divorce() }
+  \begin{minted}{Java}
+    public void divorce() {
+        if (this.spouse != null) {
+            this.spouse.setSpouse(null);
+            this.spouse = null;
+        }
+    }
+  \end{minted}
+\item D.i requires you to check that {\tt q} is not {\tt null}. Explain why
+  there is no point in checking that {\tt p}, the owner of that method, is not null. \\
+
+  If {\tt p} was null, there would be a NullPointerException. Plus where would
+  that checking happen? {\tt p} is null, so it can't happen there. It would have
+  to happen in the caller. Or just use Kotlin.
+
+\end{enumerate}
+\section{Exercise 4}
+\begin{enumerate}[label=(\alph*)]
+\end{enumerate}
+\end{document}

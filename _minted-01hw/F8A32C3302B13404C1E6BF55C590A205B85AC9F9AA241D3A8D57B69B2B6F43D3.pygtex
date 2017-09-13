@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{LocatedSquare} \PYG{k+kd}{extends} \PYG{n}{Square} \PYG{o}{\PYGZob{}}
+        \PYG{c+c1}{// Coords of lower left corner}
+        \PYG{k+kd}{private} \PYG{k+kt}{double} \PYG{n}{x}\PYG{o}{,} \PYG{n}{y}\PYG{o}{;}
+        \PYG{k+kd}{public} \PYG{n+nf}{LocatedSquare}\PYG{o}{(}\PYG{k+kt}{double} \PYG{n}{side}\PYG{o}{,} \PYG{k+kt}{double} \PYG{n}{x}\PYG{o}{,} \PYG{k+kt}{double} \PYG{n}{y}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{k+kd}{super}\PYG{o}{(}\PYG{n}{side}\PYG{o}{);}
+            \PYG{n}{setCorner}\PYG{o}{(}\PYG{n}{x}\PYG{o}{,} \PYG{n}{y}\PYG{o}{);}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{setCorner}\PYG{o}{(}\PYG{k+kt}{double} \PYG{n}{newX}\PYG{o}{,} \PYG{k+kt}{double} \PYG{n}{newY}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{x} \PYG{o}{=} \PYG{n}{newX}\PYG{o}{;}
+            \PYG{n}{y} \PYG{o}{=} \PYG{n}{newY}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{c+c1}{// Returns rightmost x value (x2)}
+        \PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{right}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{x} \PYG{o}{+} \PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{getSide}\PYG{o}{();}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{c+c1}{// Returns leftmost x value (x1)}
+        \PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{left}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{x}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{c+c1}{// Returns highest y value (y2)}
+        \PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{top}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{y} \PYG{o}{+} \PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{getSide}\PYG{o}{();}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{c+c1}{// Returns lowest y value (y1)}
+        \PYG{k+kd}{public} \PYG{k+kt}{double} \PYG{n+nf}{bottom}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n}{y}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k+kd}{public} \PYG{n}{String} \PYG{n+nf}{toString}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+            \PYG{k}{return} \PYG{l+s}{\PYGZdq{}LS[ x = \PYGZdq{}} \PYG{o}{+} \PYG{n}{x} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} y = \PYGZdq{}} \PYG{o}{+} \PYG{n}{y} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} side = \PYGZdq{}} \PYG{o}{+} \PYG{n}{getSide}\PYG{o}{()} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}]\PYGZdq{}}\PYG{o}{;}
+        \PYG{o}{\PYGZcb{}}
+    \PYG{o}{\PYGZcb{}}
+\end{Verbatim}
