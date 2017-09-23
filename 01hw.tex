@@ -9,70 +9,74 @@
 \maketitle
 \section{Exercise 1}
 \begin{enumerate}[label=(\alph*)]
-\item Rectangle rotate methods:
+\item For both {\tt Rectangle } and {\tt LocatedRect}, write two methods that rotate the rectangle by $90^o$
+  clockwise around its lower right hand corner (see picture) \\
+
+  Rectangle rotate methods:
   \begin{minted}{Java}
-     public Rectangle DestRotate() {
-        double temp;
-        temp = xSpan;
-        xSpan = ySpan;
-        ySpan = temp;
-        return this;
+    public Rectangle DestRotate() {
+      double temp;
+      temp = xSpan;
+      xSpan = ySpan;
+      ySpan = temp;
+      return this;
     }
 
     public Rectangle NonDestRotate() {
-        Rectangle newRect = new Rectangle(xSpan, ySpan);
-        newRect.DestRotate();
-        return newRect;
+      Rectangle newRect = new Rectangle(ySpan, xSpan);
+      return newRect;
     }
   \end{minted}
   LocatedRect rotate methods:
   \begin{minted}{Java}
     public LocatedRect DestRotate() {
-        // First change the lengths of the sides:
-        super.DestRotate();
-        // Then shift it over by ySpan
-        this.translateDest(super.getYSpan(), 0);
-        return this;
+      // First change the lengths of the sides:
+      super.DestRotate();
+      // Then shift it over by ySpan
+      // (rotating around lower right corner
+      //  but positioning is done by lower left corner)
+      this.translateDest(super.getYSpan(), 0);
+      return this;
     }
 
     public LocatedRect NonDestRotate() {
-        LocatedRect newLocatedRect = new LocatedRect(
-          xL,
-          xL + xSpan,
-          yL,
-          yL + ySpan
-        );
-        return newLocatedRect.DestRotate();
+      LocatedRect newLocatedRect = new LocatedRect(
+      xL,
+      xL + xSpan,
+      yL,
+      yL + ySpan
+      );
+      return newLocatedRect.DestRotate();
     }
   \end{minted}
 
 \item TestRotate driver program:
   \begin{minted}{Java}
     public class TestRotate {
-        public static void main(String[] args) {
-            LocatedRect lr = new LocatedRect(2, 10, 4, 7);
-            System.out.println("Original Located Rectangle:");
-            System.out.println(lr);
-            System.out.println("Non destructive rotate");
-            System.out.println(lr.NonDestRotate());
-            // Note how the object state isn't changed
-            System.out.println(lr);
-            System.out.println("Destructive rotate:");
-            System.out.println(lr.DestRotate());
-            // Now the state has been mutated
-            System.out.println(lr);
-            Rectangle r = new Rectangle(4, 7);
-            System.out.println("Original Rectangle:");
-            System.out.println(r);
-            System.out.println("Non destructive rotate");
-            System.out.println(r.NonDestRotate());
-            // Again, not mutated here
-            System.out.println(r);
-            System.out.println("Destructive rotate:");
-            System.out.println(r.DestRotate());
-            // But mutated here
-            System.out.println(r);
-        }
+      public static void main(String[] args) {
+        LocatedRect lr = new LocatedRect(2, 10, 4, 7);
+        System.out.println("Original Located Rectangle:");
+        System.out.println(lr);
+        System.out.println("Non destructive rotate");
+        System.out.println(lr.NonDestRotate());
+        // Note how the object state isn't changed
+        System.out.println(lr);
+        System.out.println("Destructive rotate:");
+        System.out.println(lr.DestRotate());
+        // Now the state has been mutated
+        System.out.println(lr);
+        Rectangle r = new Rectangle(4, 7);
+        System.out.println("Original Rectangle:");
+        System.out.println(r);
+        System.out.println("Non destructive rotate");
+        System.out.println(r.NonDestRotate());
+        // Again, not mutated here
+        System.out.println(r);
+        System.out.println("Destructive rotate:");
+        System.out.println(r.DestRotate());
+        // But mutated here
+        System.out.println(r);
+      }
     }
   \end{minted}
 \end{enumerate}
@@ -80,64 +84,64 @@
 \begin{enumerate}[label=(\alph*)]
 \item Square class:
   \begin{minted}{Java}
-   public class Square extends Rectangle {
-       public Square(double side) {
-           super(side, side);
-       }
-       // Doesn't matter what side
-       public double getSide() {
-           return super.getYSpan();
-       }
-       public void setSide(double side) {
-           super.setSpans(side, side);
-       }
-       public void setSpans(double x, double y) {
-           System.out.println(
-               "You may not use setSpans to set the sides of a square!"
-           );
-       }
-   }
+    public class Square extends Rectangle {
+      public Square(double side) {
+        super(side, side);
+      }
+      // Doesn't matter what side
+      public double getSide() {
+        return super.getYSpan();
+      }
+      public void setSide(double side) {
+        super.setSpans(side, side);
+      }
+      public void setSpans(double x, double y) {
+        System.out.println(
+        "You may not use setSpans to set the sides of a square!"
+        );
+      }
+    }
   \end{minted}
 \item LocatedSquare class:
   \begin{minted}{Java}
     public class LocatedSquare extends Square {
-        // Coords of lower left corner
-        private double x, y;
-        public LocatedSquare(double side, double x, double y) {
-            super(side);
-            setCorner(x, y);
-        }
-        public void setCorner(double newX, double newY) {
-            x = newX;
-            y = newY;
-        }
-        // Returns rightmost x value (x2)
-        public double right() {
-            return x + super.getSide();
-        }
-        // Returns leftmost x value (x1)
-        public double left() {
-            return x;
-        }
-        // Returns highest y value (y2)
-        public double top() {
-            return y + super.getSide();
-        }
-        // Returns lowest y value (y1)
-        public double bottom() {
-            return y;
-        }
-        public String toString() {
-            return "LS[ x = " + x + " y = " + y + " side = " + getSide() + "]";
-        }
+      // Coords of lower left corner
+      private double x, y;
+      public LocatedSquare(double side, double x, double y) {
+        super(side);
+        setCorner(x, y);
+      }
+      public void setCorner(double newX, double newY) {
+        x = newX;
+        y = newY;
+      }
+      // Returns rightmost x value (x2)
+      public double right() {
+        return x + super.getSide();
+      }
+      // Returns leftmost x value (x1)
+      public double left() {
+        return x;
+      }
+      // Returns highest y value (y2)
+      public double top() {
+        return y + super.getSide();
+      }
+      // Returns lowest y value (y1)
+      public double bottom() {
+        return y;
+      }
+      public String toString() {
+        return "LS[ x = " + x + " y = " + y + " side = " + getSide() + "]";
+      }
     }
-    \end{minted}
-  \item Can you do part (b) by having LocatedSquare extend both
-Square and LocatedRectangle? \\
-Not with traditional inheritance. You could define Square and LocatedRectangle
-as interfaces, then simply have LocatedSquare implement both. However, it's
-probably best to just utilize object composition with a Point class for the
-location and a Square class for the actual object.
+  \end{minted}
+\item Can you do part (b) by having LocatedSquare extend both
+  Square and LocatedRectangle? \\
+  Not with traditional inheritance. You could define Square and LocatedRectangle
+  as interfaces, then simply have LocatedSquare implement both. However, it's
+  probably best to just utilize object composition with a Point class for the
+  location and a Square class for the actual object.
 \end{enumerate}
 \section{Exercise 3}
 Write the following code:
@@ -148,51 +152,51 @@ Write the following code:
   \end{minted}
 \item A getter {\tt getSpouse()}
   \begin{minted}{Java}
-   public Person getSpouse() {
-       return spouse;
-   }
+    public Person getSpouse() {
+      return spouse;
+    }
   \end{minted}
 \item A method {\tt marry(Person q)}
   \begin{minted}{Java}
     // Ideally would do in intermediary class, maybe a Priest class
     public void marry(Person potentialPartner) {
-        // Check if related
-        boolean isRelated = potentialPartner.getParent2() == this ||
-                potentialPartner.getParent1() == this ||
-                this.parent1 == potentialPartner ||
-                this.parent2 == potentialPartner;
+      // Check if related
+      boolean isRelated = potentialPartner.getParent2() == this ||
+      potentialPartner.getParent1() == this ||
+      this.parent1 == potentialPartner ||
+      this.parent2 == potentialPartner;
 
-        if (potentialPartner == null) {
-            System.out.println("You can't marry imaginary people, " + name);
-            return;
-        }
-        if (potentialPartner == this) {
-            System.out.println("You can't marry yourself");
-            return;
-        }
-        if (potentialPartner.getSpouse() != null) {
-            System.out.println("Uh oh, they're already married!");
-            return;
-        }
-        if (this.spouse != null) {
-            System.out.println("Uh oh, you're already married!");
-            return;
-        }
-        if (isRelated) {
-            System.out.println("Ewww");
-            return;
-        }
-        potentialPartner.setSpouse(this);
-        setSpouse(potentialPartner);
+      if (potentialPartner == null) {
+        System.out.println("You can't marry imaginary people, " + name);
+        return;
+      }
+      if (potentialPartner == this) {
+        System.out.println("You can't marry yourself");
+        return;
+      }
+      if (potentialPartner.getSpouse() != null) {
+        System.out.println("Uh oh, they're already married!");
+        return;
+      }
+      if (this.spouse != null) {
+        System.out.println("Uh oh, you're already married!");
+        return;
+      }
+      if (isRelated) {
+        System.out.println("Ewww");
+        return;
+      }
+      potentialPartner.setSpouse(this);
+      setSpouse(potentialPartner);
     }
   \end{minted}
 \item A method {\tt divorce() }
   \begin{minted}{Java}
     public void divorce() {
-        if (this.spouse != null) {
-            this.spouse.setSpouse(null);
-            this.spouse = null;
-        }
+      if (this.spouse != null) {
+        this.spouse.setSpouse(null);
+        this.spouse = null;
+      }
     }
   \end{minted}
 \item D.i requires you to check that {\tt q} is not {\tt null}. Explain why
@@ -200,10 +204,75 @@ Write the following code:
 
   If {\tt p} was null, there would be a NullPointerException. Plus where would
   that checking happen? {\tt p} is null, so it can't happen there. It would have
-  to happen in the caller. Or just use Kotlin.
+  to happen in the caller.
 
 \end{enumerate}
 \section{Exercise 4}
+Consider the code for Hwk1Ex4A.java and Hwk1Ex4B.java on the attached handout \\
 \begin{enumerate}[label=(\alph*)]
+\item What do these output? \\
+  Hwk1Ex4A.java outputs:
+
+  {\tt
+    p = 1 \\
+    q = 184 \\
+    r = 184
+  }
+
+  Hwk1Ex4B.java outputs:
+
+  {\tt
+    p = 175 \\
+    q = 45 \\
+    r = 25 \\
+    s = 175
+  }
+
+\item Explain these output \\
+  \begin{enumerate}
+
+  \item   Hwk1Ex4A.java defines two classes: A and B. A has two instance variables: name
+    of type String and value of type int. A has a function {\tt f} that updates
+    the value by adding a parameter {\tt x} and 100 to the current value. B
+    extends A and replaces the {\tt f} function with a function {\tt f} that
+    updates value by adding a parameter {\tt x} and 20 to the current value.
+
+    The main program starts by creating {\tt p} with class {\tt A} and value 1 and
+    {\tt q} with class {\tt B} and value 1. From there, it sets {\tt r} with class
+    {\tt A} to {\tt q}. Then, by setting {\tt r}'s value to 10, {\tt q}'s value is
+    also set to 10. Afterwards it calls {\tt q.f} with {\tt p.value} as an
+    argument. This sets both {\tt q} (and {\tt r}'s) value to $10 + 1 + 20$ or 31.
+    Calling {\tt r.f } on {\tt q.value} also changes this value, instead this time
+    to $ 31 + 31 + 20 $ or 82. Finally, we repeat this exact same process, only
+    with {\tt q} and {\tt r} switched (they reference the same object so this does
+    the exact same thing as above). This gives us a total of $82 + 82 + 20$ or
+    $184$ for q and r's value. Since {\tt p}'s value has never been changed, this
+    gives us a final output of 1, 184, and 184. Note that since {\tt q/r} were
+    referencing an object of type {\tt B}, Java dynamically dispatches the {\tt f}
+    method for {\tt B}
+
+  \item Hwk1Ex4B.java defines two classes: {\tt A } and {\tt B}. {\tt Hwk1Ex4B} also
+    defines two static functions, both named {\tt f}. One takes an object of class
+    {\tt A} and one takes an object of class {\tt B}. The first one mutably adds
+    100 to the object's value, while the second immutably adds 20 to the object's
+    value.
+
+    The main program initializes three variables, {\tt p} with declared and
+    actual type {\tt A} and value 1, {\tt q} with declared and actual type {\tt
+      B} and value 5 and {\tt r} with declared and actual type {\tt B} and value
+    22. Then, {\tt r} is assigned to {\tt f(q)}. Since {\tt q} has a declared
+    type of {\tt B}, {\tt f(q)} resolves to the {\tt B} function. Therefore {\tt
+      r} now has a value of $ 5 + 20 = 25$. From there, {\tt q} is assigned the
+    output of {\tt f(r)}. Since {\tt r} has a declared type of {\tt B}, {\tt
+      f(r)} resolves to the {\tt B} function. This gives {\tt q} a value of $25
+    + 20 = 45$. Next, a new variable {\tt s}, with declared type {\tt A} gets
+    assigned to {\tt f(r)}. Therefore, {\tt s} has a actual type {\tt B} and a
+    value of 45. After that, {\tt p} is assigned to {\tt f(s)}. Since {\tt s}
+    has a declared type of {\tt A}, {\tt f(s) } resolves to the {\tt A}
+    function. Therefore, {\tt s}'s value is incremented by 100, to become 145.
+    Additionally, {\tt p} now references the same object as {\tt s}, so its
+    value is also 145. Finally, {\tt p}'s value is incremented by 30, which also
+    increments {\tt s}'s value to a final value of 175.
+  \end{enumerate}
 \end{enumerate}
 \end{document}

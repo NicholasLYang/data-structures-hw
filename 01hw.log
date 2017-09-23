@@ -1,12 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2017 10:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 SEP 2017 17:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**01hw.tex
-(./01hw.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+**\nonstopmode\input 01hw.tex
+(./01hw.tex (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -264,11 +261,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
 \openout3 = `01hw.pyg'.
 
- (./_minted-01hw/default-pyg-prefix.pygstyle) (./_minted-01hw/default.pygstyle)
-
-(./_minted-01hw/13B56651F2EFEDE2DFAF7EE191B9B928B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/default-pyg-prefix.pygstyle) (./_minted-01hw/default.pygstyle)
+(./_minted-01hw/E173D776C3A2E6FF17F4A8A19445047AB85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
@@ -276,28 +283,24 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 \openout3 = `01hw.pyg'.
 
 
-(./_minted-01hw/608AFD6ACA960EADDC7F1875617D0B40B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/73E9A4088147157C7622616E05FC0AC4B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \openout3 = `01hw.pyg'.
 
-runsystem(pygmentize -l Java -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-01hw/ED3852B2975425CEB04B9E1C50D5EE62B85AC9F9AA241D3A8D57B69B2B6F43D3.pygt
-ex 01hw.pyg)...executed.
 
-
-(./_minted-01hw/ED3852B2975425CEB04B9E1C50D5EE62B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/3855E900EBF2AA63D76A5758BE8FBE41B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex)
 \openout3 = `01hw.pyg'.
 
 
-(./_minted-01hw/B9E6F6057D79207391CF292160B71AD1B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/EB267D6ACE674588477C8C9A9B475F55B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex [2])
 \openout3 = `01hw.pyg'.
 
 
-(./_minted-01hw/F8A32C3302B13404C1E6BF55C590A205B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/3AB731344D985267100888B1102C4AE9B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex [3])
 \openout3 = `01hw.pyg'.
 
@@ -307,53 +310,54 @@ ex 01hw.pyg)...executed.
 \openout3 = `01hw.pyg'.
 
 
-(./_minted-01hw/8D238044FDB1A2BEADE930AF9BBF960BB85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/CD3ADF5CA57F6E2B3E3D4B0E927D9860B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex)
 \openout3 = `01hw.pyg'.
 
-runsystem(pygmentize -l Java -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-01hw/D313B800CA808101C9D19CDA12973777B85AC9F9AA241D3A8D57B69B2B6F43D3.pygt
-ex 01hw.pyg)...executed.
 
-
-(./_minted-01hw/D313B800CA808101C9D19CDA12973777B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/E6BCD80189D26BC0AC9FA790518A5C9FB85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex [4])
 \openout3 = `01hw.pyg'.
 
-runsystem(pygmentize -l Java -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-01hw/66EB42E91E7FB232178ACBEEC7865762B85AC9F9AA241D3A8D57B69B2B6F43D3.pygt
-ex 01hw.pyg)...executed.
 
-
-(./_minted-01hw/66EB42E91E7FB232178ACBEEC7865762B85AC9F9AA241D3A8D57B69B2B6F43D
+(./_minted-01hw/E91E31EBC6E0F11A1161044204A7F4E6B85AC9F9AA241D3A8D57B69B2B6F43D
 3.pygtex)
-runsystem(rm _minted-01hw/115F491F6DD924AC5A8543544BD2E634B85AC9F9AA241D3A8D57B
-69B2B6F43D3.pygtex)...executed.
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
-runsystem(rm _minted-01hw/D2B39EEEEB977A5238DA302C64A58029B85AC9F9AA241D3A8D57B
-69B2B6F43D3.pygtex)...executed.
+ []
 
- [5] (./01hw.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
+
+ []
+
+[6] [7] (./01hw.aux)
 runsystem(rm 01hw.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 4900 strings out of 492995
- 87081 string characters out of 6132704
- 196826 words of memory out of 5000000
- 8378 multiletter control sequences out of 15000+600000
- 6093 words of font info for 23 fonts, out of 8000000 for 9000
+ 4917 strings out of 492995
+ 87160 string characters out of 6132704
+ 197375 words of memory out of 5000000
+ 8391 multiletter control sequences out of 15000+600000
+ 8531 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,35p,839b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,35p,858b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on 01hw.pdf (5 pages, 62207 bytes).
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on 01hw.pdf (7 pages, 76603 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

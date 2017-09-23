@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{public} \PYG{k+kd}{interface} \PYG{n+nc}{ReduceFun} \PYG{o}{\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n+nf}{f}\PYG{o}{(}\PYG{k+kt}{int} \PYG{n}{a}\PYG{o}{,} \PYG{k+kt}{int} \PYG{n}{b}\PYG{o}{);}
+    \PYG{o}{\PYGZcb{}}
+\end{Verbatim}

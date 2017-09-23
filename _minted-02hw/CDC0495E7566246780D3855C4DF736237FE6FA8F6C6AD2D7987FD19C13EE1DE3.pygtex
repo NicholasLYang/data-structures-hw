@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kt}{void} \PYG{n+nf}{main}\PYG{o}{(}\PYG{n}{String}\PYG{o}{[]} \PYG{n}{args}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+        \PYG{n}{SumReduce} \PYG{n}{sumReduce} \PYG{o}{=} \PYG{k}{new} \PYG{n}{SumReduce}\PYG{o}{();}
+        \PYG{n}{ProductReduce} \PYG{n}{productReduce} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ProductReduce}\PYG{o}{();}
+        \PYG{n}{DifferenceReduce} \PYG{n}{differenceReduce} \PYG{o}{=} \PYG{k}{new} \PYG{n}{DifferenceReduce}\PYG{o}{();}
+        \PYG{c+c1}{// Create an IntList. No need to add a next node right now}
+        \PYG{n}{IntList} \PYG{n}{myList} \PYG{o}{=} \PYG{k}{new} \PYG{n}{IntList}\PYG{o}{(}\PYG{l+m+mi}{10}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{);}
+        \PYG{k+kt}{int}\PYG{o}{[]} \PYG{n}{array} \PYG{o}{=} \PYG{o}{\PYGZob{}} \PYG{l+m+mi}{1}\PYG{o}{,} \PYG{l+m+mi}{2}\PYG{o}{,} \PYG{l+m+mi}{5}\PYG{o}{,} \PYG{l+m+mi}{8}\PYG{o}{,} \PYG{l+m+mi}{4}\PYG{o}{,} \PYG{l+m+mi}{11}\PYG{o}{,} \PYG{l+m+mi}{21}\PYG{o}{,} \PYG{l+m+mi}{4}\PYG{o}{,} \PYG{l+m+mi}{18} \PYG{o}{\PYGZcb{};}
+        \PYG{c+c1}{// Add items to list}
+        \PYG{k}{for} \PYG{o}{(} \PYG{k+kt}{int} \PYG{n}{item} \PYG{o}{:} \PYG{n}{array} \PYG{o}{)} \PYG{o}{\PYGZob{}}
+            \PYG{n}{myList}\PYG{o}{.}\PYG{n+na}{addEnd}\PYG{o}{(}\PYG{n}{item}\PYG{o}{);}
+        \PYG{o}{\PYGZcb{}}
+        \PYG{k+kt}{int} \PYG{n}{sum} \PYG{o}{=} \PYG{n}{reduceList}\PYG{o}{(}\PYG{n}{sumReduce}\PYG{o}{,} \PYG{n}{myList}\PYG{o}{);}
+        \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{n}{sum}\PYG{o}{);}
+        \PYG{k+kt}{int} \PYG{n}{product} \PYG{o}{=} \PYG{n}{reduceList}\PYG{o}{(}\PYG{n}{productReduce}\PYG{o}{,} \PYG{n}{myList}\PYG{o}{);}
+        \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{n}{product}\PYG{o}{);}
+        \PYG{k+kt}{int} \PYG{n}{difference} \PYG{o}{=} \PYG{n}{reduceList}\PYG{o}{(}\PYG{n}{differenceReduce}\PYG{o}{,} \PYG{n}{myList}\PYG{o}{);}
+        \PYG{n}{System}\PYG{o}{.}\PYG{n+na}{out}\PYG{o}{.}\PYG{n+na}{println}\PYG{o}{(}\PYG{n}{difference}\PYG{o}{);}
+    \PYG{o}{\PYGZcb{}}
+\end{Verbatim}
