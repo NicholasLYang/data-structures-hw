@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{minted}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{shapes.multipart}
+\title{Data Structures Problem Set \#3}
+\author{Nicholas Yang}
+\date{2 October 2017}
+\begin{document}
+\maketitle
+\section{Problem 1}
+\begin{enumerate}[label=(\alph*)]
+\item
+  First let's make a copy function for convenience:
+  \begin{minted}{Java}
+    public static <T> MyList1<T> copy(MyList1<T> list1) {
+        MyList1<T> newList = new MyList1<T>();
+        MyList1<T> a = list1.getNext();
+        while (a != null) {
+            newList.addLast(a.getValue());
+            a = a.getNext();
+        }
+        return newList;
+    }
+  \end{minted}
+  Then the append function:
+  \begin{minted}{Java}
+    public static <T> MyList1<T> append(MyList1<T> L, MyList1<T> M) {
+        MyList1<T> copiedL = copy(L);
+        MyList1<T> lastL = copiedL.last();
+        lastL.next = M.getNext();
+        return copiedL;
+    }
+  \end{minted}
+\item The running time of {\tt append} is related linearly to the length of {\tt
+  L}, but constant time to the length of {\tt M}.
+\end{enumerate}
+\section{Problem 2}
+\begin{enumerate}[label=(\alph*)]
+\item Duplicate for singly linked list:
+  \begin{minted}{Java}
+     public void duplicate(MyList1<T> node) {
+        MyList1<T> next = node.getNext();
+        MyList1<T> duplicate = new MyList1<>();
+        duplicate.setValue(node.getValue());
+        duplicate.setNext(next);
+        node.setNext(duplicate);
+    }
+  \end{minted}
+  Note that this works even when duplicating the last node. {\tt next} is null,
+  but since it is never called, there is no NullPointerException
+\item Duplicate for doubly linked list:
+  \begin{minted}{Java}
+    public void duplicate(MyNode2<T> node) {
+        MyNode2<T> next = node.getNext();
+        MyNode2<T> duplicate = new MyNode2<T>();
+        duplicate.setValue(node.getValue());
+        node.setNext(duplicate);
+        duplicate.setPrev(node);
+        duplicate.setNext(next);
+        // Gotta check otherwise there will be a NullPointerException
+        if (next != null) {
+            next.setPrev(duplicate);
+        }
+    }
+  \end{minted}
+  In contrast to the other function above, there needs to be an explicit null
+  check for {\tt next}, as its {\tt setPrev} function needs to be called
+\end{enumerate}
+\section{Problem 3}
+\begin{enumerate}[label=(\alph*)]
+\item {\tt numBetween } for {\tt OrderedList}:
+  \begin{minted}{Java}
+    public int numBetween(int bottom, int top) {
+        // Find the smallest number larger than bottom
+        int minIndex = search(bottom + 1);
+        // Find the smallest number larger than or equal to top
+        int maxIndex = search(top);
+        // If the element at maxIndex is bigger than top,
+        // count from the next lowest element
+        if (elements[maxIndex] > top) {
+            return (maxIndex - 1) - minIndex;
+        } else {
+            // Otherwise, just subtract the two indices
+            return maxIndex - minIndex;
+        }
+    }
+  \end{minted}
+\item {\tt numBetween } for {\tt GOrderedList}:
+  \begin{minted}{Java}
+    public int numBetween(T bottom, T top) {
+        GOrderedList<T> n = next;
+        int count = 0;
+        while (n != null) {
+            // if n is greater than the bottom value,
+            // break the loop
+            if (n.getValue().compareTo(top) >= 0) {
+                break;
+            }
+            // Otherwise, add to the count
+            if (n.getValue().compareTo(bottom) > 0) {
+                count++;
+            }
+            n = n.getNext();
+        }
+        return count;
+    }
+  \end{minted}
+\end{enumerate}
+\end{document}

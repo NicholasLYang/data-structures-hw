@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 SEP 2017 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 OCT 2017 23:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode\input 02hw.tex
-(./02hw.tex (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+**\nonstopmode\input 03hw.tex
+(./03hw.tex (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -158,11 +158,11 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "02hw.w18")...executed.
+runsystem(uname -s > "03hw.w18")...executed.
 
 
-(./02hw.w18)
-runsystem(rm -- "02hw.w18")...executed.
+(./03hw.w18)
+runsystem(rm -- "03hw.w18")...executed.
 
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.sty
@@ -189,7 +189,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \@float@every@listing=\toks18
 \c@listing=\count111
 )
-runsystem(mkdir -p _minted-02hw)...executed.
+runsystem(mkdir -p _minted-03hw)...executed.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
@@ -539,12 +539,12 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 \pgfnodepartsixbox=\box64
 \pgfnodepartfivebox=\box65
 ))
-runsystem(which pygmentize && touch 02hw.aex)...executed.
+runsystem(which pygmentize && touch 03hw.aex)...executed.
 
-runsystem(rm 02hw.aex)...executed.
+runsystem(rm 03hw.aex)...executed.
 
- (./02hw.aux)
-\openout1 = `02hw.aux'.
+ (./03hw.aux)
+\openout1 = `03hw.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -596,97 +596,70 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 11.
-\openout3 = `02hw.pyg'.
+\openout3 = `03hw.pyg'.
 
 
-(./_minted-02hw/default-pyg-prefix.pygstyle) (./_minted-02hw/default.pygstyle)
-(./_minted-02hw/972ED3836B5B331B7D88C4C1CF61686C7FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex
+(./_minted-03hw/default-pyg-prefix.pygstyle) (./_minted-03hw/default.pygstyle)
+(./_minted-03hw/9F1640F44084E5D015071ADBEDFAECB7A3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
-\openout3 = `02hw.pyg'.
+\openout3 = `03hw.pyg'.
 
 
-(./_minted-02hw/07E744E78D07C1464FC5B5F1173712D87FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex)
-\openout3 = `02hw.pyg'.
+(./_minted-03hw/5DBD052962F02FF642594075C386D8F4A3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex)
+\openout3 = `03hw.pyg'.
 
 
-(./_minted-02hw/90EE791F2D81D9027AD71B8905C867777FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex)
-\openout3 = `02hw.pyg'.
-
-
-(./_minted-02hw/B40CDE04B1E718A324358A43AA0E7DBF7FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex [1
+(./_minted-03hw/34DF05889A762AC58A227BA7B28320F5A3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-\openout3 = `02hw.pyg'.
+\openout3 = `03hw.pyg'.
 
 
-(./_minted-02hw/9F0895DE328CEC0DCAA21E8511461E331FF3C724358D4CF82F87EBE50B15CBA
-8.pygtex
-Overfull \hbox (13.34964pt too wide) in paragraph at lines 54--1
-[] 
- []
-
-)
-\openout3 = `02hw.pyg'.
+(./_minted-03hw/EFF5E24ECF493612E59D11CD48542975A3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex)
+\openout3 = `03hw.pyg'.
 
 
-(./_minted-02hw/47849388DD751F095480ACF3AFF799F77FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex)
-\openout3 = `02hw.pyg'.
+(./_minted-03hw/475080CBC5AB73339C8B6E39297705FBA3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex)
+\openout3 = `03hw.pyg'.
+
+runsystem(pygmentize -l Java -f latex -P commandprefix=PYG -F tokenmerge -o _mi
+nted-03hw/92BC847532E79DE5BA434E2700215358A3DBEF94FCD3C33B77C1952EFA1EB8C4.pygt
+ex 03hw.pyg)...executed.
 
 
-(./_minted-02hw/8B964625B1E1DC91894A837530BDBB587FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex [2])
-\openout3 = `02hw.pyg'.
+(./_minted-03hw/92BC847532E79DE5BA434E2700215358A3DBEF94FCD3C33B77C1952EFA1EB8C
+4.pygtex [2])
+runsystem(rm _minted-03hw/684E86757B6882CA0A5CF5E681CDF630A3DBEF94FCD3C33B77C19
+52EFA1EB8C4.pygtex)...executed.
 
-
-(./_minted-02hw/0088AF878C69D81F47CCA6F8CEFA99A67FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex)
-\openout3 = `02hw.pyg'.
-
-
-(./_minted-02hw/CDC0495E7566246780D3855C4DF736237FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex [3])
-\openout3 = `02hw.pyg'.
-
-
-(./_minted-02hw/8C2D09F48D12A77077A307961BC91F0A7FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex)
-\openout3 = `02hw.pyg'.
-
-
-(./_minted-02hw/E562DB47CC84F12E3041C5E925A1A77A7FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex [4])
-\openout3 = `02hw.pyg'.
-
-
-(./_minted-02hw/F2A1F86CC995D22C55E24FAF4FE28D517FE6FA8F6C6AD2D7987FD19C13EE1DE
-3.pygtex) [5] (./02hw.aux)
-runsystem(rm 02hw.pyg)...executed.
+ [3] (./03hw.aux)
+runsystem(rm 03hw.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 15111 strings out of 492995
- 317377 string characters out of 6132704
- 404194 words of memory out of 5000000
- 18349 multiletter control sequences out of 15000+600000
+ 15045 strings out of 492995
+ 314347 string characters out of 6132704
+ 403211 words of memory out of 5000000
+ 18300 multiletter control sequences out of 15000+600000
  6093 words of font info for 23 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,55p,858b,1967s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,55p,858b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on 02hw.pdf (5 pages, 62424 bytes).
+Output written on 03hw.pdf (3 pages, 55719 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 37 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
